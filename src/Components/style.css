@@ -1,0 +1,79 @@
+.delete-button-circle {
+    background: rgb(10, 10, 10);
+    border: none;
+    color: rgb(16, 15, 15);
+    font-size: 40px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+ }
+ .delete-button-circle:hover {
+    background: rgb(251, 249, 249);
+    color: rgb(8, 8, 8);
+ }
+ .test-danger mt-2{
+   color:red;
+   display: block;
+   margin-top: 0.25rem;
+ }
+ .total-salary-box{
+   background-color: lightgreen;
+   padding: 20px;
+   border-radius: 5px;
+   position: absolute;
+   top: 80px;
+   left: 30px;
+ }
+ .total-salary-box p{
+   margin: 0;
+ }
+ .total-salary-box span{
+   font-weight:bold;
+   text-align: center;
+ }
+ .total-salary{
+   font-weight: bold;
+   font-size: 1.2em;
+ }
+ .background-container{
+  background-color: rgb(225, 252, 252);
+  min-height: 100vh;
+  padding: 20px;
+ }
+
+ .table-container{
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+ }
+ .table-font{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+ }
+.form-text-font{
+  font-family: 'Times New Roman', Times, serif;
+ }
+ .validation-text{
+  font-size: 14px;
+  color: rgb(223, 19, 19);
+ }
+ .delete-button {
+  background: none;
+  border: none;
+  color: rgb(133, 4, 4);
+  cursor: pointer;
+  font-size: 1.5em; /* Adjust the size as needed */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: color 0.3s ease;
+}
