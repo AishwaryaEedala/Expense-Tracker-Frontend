@@ -88,12 +88,41 @@ const ExpensesComponent = () => {
             errors.description="Enter the Description of the Expense!";
             isValid=false;
         }
+            if(description.length >30){
+            errors.description="Description can't be more than 30 letters!";
+            isValid=false;
+        }
+          else if(description.length < 3){
+            errors.description="Description can't be less than 3 letters!";
+            isValid=false;
+        }
+        else if((!/^[a-zA-Z]+$/.test(description))){
+            errors.description="Description can only contain Letters!";
+            isValid=false;
+        }
         if(!location.trim()){
             errors.location="Enter Location of the Expense!";
             isValid=false;
         }
+        if(location.length >30){
+            errors.location="Location can't be more than 30 letters!";
+            isValid=false;
+        }
+        else if(location.length < 3){
+            errors.location="Location can't be less than 3 letters!";
+            isValid=false;
+        }
+        else if((!/^[a-zA-Z]+$/.test(location))){
+            errors.location="Location can only contain Letters!";
+            isValid=false;
+        }
+        
         if(!rupees.trim()){
             errors.rupees="Enter Cost of the Expense!";
+            isValid=false;
+        }
+        if(rupees.length >30){
+            errors.rupees="Cost can't be more than 30 integers!";
             isValid=false;
         }
         if(!expensedate){
