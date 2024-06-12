@@ -96,7 +96,7 @@ const ExpensesComponent = () => {
             errors.description="Description can't be less than 3 letters!";
             isValid=false;
         }
-        else if((!/^[a-zA-Z]+$/.test(description))){
+        else if((!/^[a-zA-Z\s]+$/.test(description))){
             errors.description="Description can only contain Letters!";
             isValid=false;
         }
@@ -112,7 +112,7 @@ const ExpensesComponent = () => {
             errors.location="Location can't be less than 3 letters!";
             isValid=false;
         }
-        else if((!/^[a-zA-Z]+$/.test(location))){
+        else if((!/^[a-zA-Z\s]+$/.test(location))){
             errors.location="Location can only contain Letters!";
             isValid=false;
         }
@@ -218,20 +218,34 @@ const ExpensesComponent = () => {
                     </div>
                     <div className='form-group mb-2'>
                         <label className='form-label form-text-font'>Category</label>
-                        <div>
-                        <select 
-                        selected={category_name}
-                        onChange={(e) =>setCategory_name(e.target.value)}>
                         
-                     <option>Select Category</option>
-                     {categories.map( category =>
-                    <option id={category.id} >
-                    {category.category_name} 
-                    </option>
-                    )}
-                    </select>
-                    </div>
-                        {errors.category_name &&<div className="test-danger mt-2 validation-text">{errors.category_name}</div>}
+                        <select
+                        className={`form-control ${errors.category_name ? 'is-invalid' : ''}`}
+                                value = {category_name}
+                                onChange={(e) => setCategory_name(e.target.value)}>
+                                        <option value=" ">Select Category</option>
+
+                                        <option value="Travel">Travel</option>
+
+                                        <option value="Food">Food</option>
+
+                                        <option value="AutoLoan">AutoLoan</option>
+
+                                        <option value="Subscriptions">Subscriptions</option>
+
+                                        <option value="StudentLoan">StudentLoan</option>
+                                        
+                                        <option value="Utilities">Utilities</option>
+
+                                        <option value="Shopping">Shopping</option>
+                                        <option value="Groceries">Groceries</option>
+
+                                        
+
+                                    </select>
+
+                                    {errors.category_name && <div className="invalid-feedback">{errors.category_name}</div>}
+                
 
                     </div>
                     <button className='btn btn-success' onClick={saveOrUpdateExpense}>Save</button>
